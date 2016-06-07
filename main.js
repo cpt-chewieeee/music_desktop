@@ -1,11 +1,12 @@
 var electron = require('electron');
 var electronApp = {};
-
+var chalk = require('chalk');
 electronApp.app =electron.app;
 electronApp.BrowserWindow = electron.BrowserWindow;
 electronApp.mainWindow = null;
 
 function createWindow(){
+	console.log(chalk.red.bold.underline('Starting...'));
 	electronApp.mainWindow = new electronApp.BrowserWindow ({
 		width: 1000,
 		height: 625
@@ -17,6 +18,7 @@ function createWindow(){
 	});
 }
 function allClosed(){
+	
 	electronApp.app.quit();
 }
 function activate(){
